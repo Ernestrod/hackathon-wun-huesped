@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pasa la bola</title>
+	<meta name="Description" content="Product Manager Web Application created with AngularJS and PHP">
+	<link rel="stylesheet" href="admin/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="admin/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="admin/css/font-awesome.min.css" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	
+	        <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map,#map2 {
+               /* width: 750px;*/
+                height: 500px;
+            }
+			
+			.paso2,.paso3{
+			
+				display:none;
+			}
+			.paso1 input{ width:100%; font-size:30px!important;}
+			.paso1{ margin-top:40%;}
+			.paso2{ margin-top:20%;}
+			.paso3{ margin-top:30px;}
+        </style>
+</head>
+<body>
+ 
+	<!--<div class="content">
+		<div class="row">
+			<div class="col-md-12">
+			<div class="blog-masthead">
+			  <div class="container">
+				<nav class="blog-nav">
+				  <a class="blog-nav-item active" href="#/">Bola</a>
+				</nav>
+			  </div>
+			</div>
+			</div>
+		</div>
+	</div>-->
+	<div class="container">
+	
+		<!--<div class="row">
+			<div class="page-header">
+				<h1>Pasa la Bola <small>Dale, mové la bola.</small></h1>
+			</div>
+		</div> -->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-default paso1">
+				  <div class="panel-body">
+						<form class="form">
+						  <div class="form-group">
+							<label class="sr-only" for="name">Como es Tu nombre</label>
+							<input class="name" type="text" placeholder="Cómo es tu nombre" class="form-control" id="name" placeholder="">
+						  </div>
+						  <a class="btn btn-default pull-left">Continuar</a>
+						</form>
+				  </div>
+				</div>
+				<div class="panel panel-default paso2">
+				  <div class="panel-heading"><h2>¡Hola [[nombre]]!</h2></div>
+				  <div class="panel-body">
+						<p><h2>¡Bienvenido <strong class="name"></strong>! Sos la persona número <strong class="num">[#]</strong> que forma parte de esta causa.</h2></p>
+						<p><strong class="prevName">Luis</strong> te eligió porque cree en vos y quiere hacerte parte . Pulsá el botón play en la bola para escuchar el mensaje y seguir la movida.</p>
+						<p>Él ya se hizo el testeo de VIH y ahora es tu turno, ¿te sumás?</p>
+						<p>La prueba es como un exámen de sangre normal, super rápido y gratuito.</p>
+						<p>Activá tu bola y ve donde se encuentra el centro de salud más cercano.</p>
+						<p>La bola no puede quedarse parada. Después que te hayas hecho el testeo, elegí a alguien para que continue la movida. No te olvides de grabarle un nuevo mensaje de voz. 
+						La idea es que la bola no se detenga en el camino y que alcance muchas más personas.</p>
+
+						<p><strong>Dale, mové la bola.</strong></p>
+						<div class=" pull-right">
+							<div class="input-group">
+							  <input class="mail" type="text" placeholder="Tu Mail" class="form-control" aria-label="...">
+							  <div class="input-group-btn">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activar Bola </button>
+							  </div><!-- /btn-group -->
+							</div><!-- /input-group -->
+						  </div>
+				  </div>
+				</div>
+				
+				<div class="panel panel-default paso3">
+				  <div class="panel-heading">Gracias [[nombre]]!</div>
+				  <div class="panel-body">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Punto de Atencion más Cercano</a></li>
+							<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Alcance</a></li>
+							<!--<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Alcance Geografico</a></li>-->
+							<li><a href="http://www.huesped.org.ar/" target="_blank">Más Info</a></li>
+						  </ul>
+
+						  <!-- Tab panes -->	
+						  <div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">
+								
+								 <div id="map"></div>
+							
+							</div>
+							<div role="tabpanel" class="tab-pane" id="profile">...</div>
+							<div role="tabpanel" class="tab-pane" id="messages">
+								<div id="map2"></div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="settings">...</div>
+						  </div>
+				  </div>
+				</div>
+				
+				
+			</div>
+		</div>
+		
+	</div>
+<!-- Libraries -->
+
+
+<!-- Some Bootstrap Helper Libraries -->
+
+<script src="admin/js/jquery.min.js"></script>
+<script src="admin/js/bootstrap.min.js"></script>
+<script src="admin/js/underscore.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="admin/js/ie10-viewport-bug-workaround.js"></script>
+
+ <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+           
+        </script>
+	<script src="js/main.js"></script>
+</body>
+</html>

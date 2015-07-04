@@ -87,6 +87,28 @@ $app->delete('/personas/:id', function($id) {
 });
 
 //front
+
+$app->get('/activateBall/:id', function($id) { 
+	$condition = array('bola'=>$id);
+    global $db;
+    $rows = $db->select("personas","name",$condition);
+	$forCount = $db->select("personas","id",array());
+	$totalPersons = count($forCount["data"]);
+	$rows["totalpersons"] = $totalPersons;
+    echoResponse(200, $rows);
+});
+
+$app->post('/activateBall', function() use ($app) { 
+    $data = json_decode($app->request->getBody());
+	var_dump((object)$_POST);
+    $mandatory = array('name');
+    global $db;
+    $rows = $db->insert("personas", (object)$_POST, $mandatory);
+    if($rows["status"]=="success")
+        $rows["message"] = "Product added successfully.";
+    echoResponse(200, $rows);
+});
+
 $app->get('/graphic/personsByball/:id', function($id) { 
 	$condition = array('bola'=>$id);
     global $db;
