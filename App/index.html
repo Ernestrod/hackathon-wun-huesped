@@ -13,7 +13,7 @@
             /* Set a size for our map container, the Google Map will take up 100% of this container */
             #map,#map2 {
                /* width: 750px;*/
-                height: 500px;
+                height: 300px;
             }
 			
 			.paso2,.paso3{
@@ -22,8 +22,11 @@
 			}
 			.paso1 input{ width:100%; font-size:30px!important;}
 			.paso1{ margin-top:40%;}
-			.paso2{ margin-top:20%;}
+			.paso2{ margin-top:20px;}
 			.paso3{ margin-top:30px;}
+			body{background:#E7E2C7;}
+			#demo-canvas{ position:absolute; top:0; left:0; left: -37px;}
+			.logo{position:absolute; bottom:0; right:0; z-index:200; padding:20px; width:100%;  text-align:right; background:rgba(255,255,255,.5)}
         </style>
 </head>
 <body>
@@ -41,6 +44,10 @@
 			</div>
 		</div>
 	</div>-->
+					
+	
+	<div class="logo"><img src="images/bola.png"><img src="images/fundacion.png"></div>
+	<canvas id="demo-canvas"></canvas>
 	<div class="container">
 	
 		<!--<div class="row">
@@ -132,6 +139,7 @@
             // When the window has finished loading create our google map below
            
         </script>
+	<script src="js/code.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
