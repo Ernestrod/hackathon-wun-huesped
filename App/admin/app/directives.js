@@ -50,3 +50,28 @@ app.directive('animateOnChange', function($animate) {
       });  
   }  
 });
+
+app.directive('autoActive', ['$location', function ($location) {
+        return {
+            restrict: 'A',
+            scope: false,
+            link: function (scope, element) {
+                function setActive() {
+                    var path = $location.path();
+					
+                    if (path) {
+                        angular.forEach(element.find('a'), function (a) {
+                            var anchor = a;
+                            if (anchor.href.match('' + path + '(?=\\?|$)')) {
+                                angular.element(a).addClass('active');
+                            } else {
+                                angular.element(a).removeClass('active');
+                            }
+                        });
+                    }
+                }
+
+                scope.$on('$locationChangeSuccess', setActive);
+            }
+        }
+    }]);
